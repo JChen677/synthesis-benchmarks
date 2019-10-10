@@ -1,6 +1,10 @@
 ## Running timeScript.py
 $python timeScript.py
 
+Ensure that both JSYN and Z3Prover are installed onto the computer. Before running the script, navigate to ../dtsynth and run the command
+
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./lib/z3/bin/
+
 The script prints the times reported by JSynth and DTSynth (total computation time only) into an excel file (data.csv) stored in the /scripts folder (the same folder that the script is in). The data is stored in the following format
 
 	JSynth Benchmark	Time(s)			DTSynth Benchmark	Time(s)
