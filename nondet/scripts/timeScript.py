@@ -7,7 +7,7 @@ import shutil
 import subprocess
 import sys
 
-jsynBench = ["box", "diagonal", "evasion", "follow", "limitedbox", "solitarybox", "square"]
+jsynBench = ["box", "diagonal", "evasion", "follow", "limitedbox", "solitarybox", "square", "cinderella"]
 dtBench = ["boxGame", "diagonalGame", "evasion_Paper", "follow_Paper", "limited_diagonal", "solitaryBoxGame", "square"]
 
 def parseJSynRet(jsyn):
@@ -49,6 +49,10 @@ def main():
 		dt = subprocess.check_output(args)
 		time = parseDTRet(dt)
 		dtTimes.append(time)
+
+	#DTSynth has no cinderella file
+	dtBench.append("cinderella")
+	dtTimes.append("n/a")
 
 	#Write results to data.csv
 	os.chdir("../scripts")
